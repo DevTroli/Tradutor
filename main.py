@@ -124,7 +124,7 @@ class TelaInicial:
         
         valorCombo = LANGUAGES[self.comboIdioma.get()].upper()
         self.LblIdioSel.config(text=valorCombo)
-        print(valorCombo)
+        #print(valorCombo)
         
 
     def criarTela(self):
@@ -177,7 +177,9 @@ class TelaInicial:
         self.botaoAbre = Button(self.root, text="Digitar", bg ='DeepSkyBlue',width=15,fg='black',font=('arial',9,'bold'),command=self.funcaoTraduzaTexto)
         self.botaoAbre.place(relx=0.10,rely=0.94)
         self.botaosalva = Button(self.root, text="Falar", bg ='DeepSkyBlue',width=15, fg='black',font=('arial',9,'bold'),command=self.funcaoTraduzaVoz)
-        self.botaosalva.place(relx=0.60,rely=0.94)
+        self.botaosalva.place(relx=0.40,rely=0.94)
+        self.botaolimpar = Button(self.root, text="Limpar", bg ='DeepSkyBlue',width=15, fg='black',font=('arial',9,'bold'),command=self.limpar)
+        self.botaolimpar.place(relx=0.70,rely=0.94)
 
         #self.TesteScale = Scale(self.root)
         #self.TesteScale.place(relx=0.40,rely=0.50)
@@ -215,7 +217,9 @@ class TelaInicial:
         except:
                 tkMessageBox.showerror('Algo Errado', "Tente novamente!")
 
-
+    def limpar(self):
+        limpatext = self.TxtTraduzir.delete("1.0","end")
+        limpatext = self.TxtTraduzido.delete("1.0","end")
     
    
 TelaInicial()

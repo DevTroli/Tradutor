@@ -19,7 +19,7 @@ class MeuTradutor:
        
         self.traduzido = translator.translate(self.textoTraduza, dest=self.idioma).text
 
-        print(self.traduzido)
+        #print(self.traduzido)
 
         voz = gTTS(self.traduzido, lang=self.idioma)
         voz.save("./arquivos/voz.mp3")

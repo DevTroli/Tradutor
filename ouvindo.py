@@ -15,7 +15,7 @@ class Microfone:
             try:
                 #Passa o audio para o reconhecedor de padroes do speech_recognition
                 self.frase = microfone.recognize_google(audio,language=self.idiomafala)
-                print(self.frase)
+                #print(self.frase)
             except:
                 pass
 
